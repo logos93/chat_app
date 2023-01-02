@@ -9,6 +9,7 @@ exports.getChats = (req, res, next) => {
                 id: {
                     [Op.gt]: parseInt(req.query.lastId),
                 },
+                groupId: parseInt(req.query.groupId),
             },
         })
             .then((response) => {
@@ -16,7 +17,7 @@ exports.getChats = (req, res, next) => {
             })
             .catch((err) => console.log(err));
     } else {
-        Chats.findAll()
+        Chats.findAll({ where: { groupId: req.query.groupId } })
             .then((response) => {
                 res.status(200).send(response);
             })
@@ -30,6 +31,7 @@ exports.postChat = (req, res, next) => {
         name: req.user.name,
         message: req.body.message,
         userId: req.user.id,
+        groupId: req.body.groupId,
     })
         .then((response) => {
             res.status(201).send(response);
