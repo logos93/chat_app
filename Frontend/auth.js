@@ -122,7 +122,10 @@ function signIn(e) {
                     alert("Sign In Successful!");
                     sessionStorage.setItem(
                         "auth",
-                        JSON.stringify({ token: response.data.token })
+                        JSON.stringify({
+                            token: response.data.token,
+                            userId: response.data.userId,
+                        })
                     );
                     checkAuthState();
                 }

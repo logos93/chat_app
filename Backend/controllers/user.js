@@ -37,7 +37,11 @@ exports.findUser = (req, res, next) => {
                     if (result) {
                         res
                             .status(200)
-                            .send({ code: 1, token: generateToken(creds.email) });
+                            .send({
+                                code: 1,
+                                token: generateToken(creds.email),
+                                userId: response.id,
+                            });
                     } else {
                         res.status(200).send({ code: 2 });
                     }

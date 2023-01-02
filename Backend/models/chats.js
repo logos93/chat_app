@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 const sequelize = require("../util/database");
 
-const Users = sequelize.define("users", {
+const Chats = sequelize.define("chats", {
     id: {
         type: Sequelize.INTEGER,
         allowedNull: false,
@@ -13,18 +13,10 @@ const Users = sequelize.define("users", {
         type: Sequelize.STRING,
         allowedNull: false,
     },
-    phone: {
-        type: Sequelize.STRING,
-        allowedNull: false,
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowedNull: false,
-    },
-    password: {
+    message: {
         type: Sequelize.STRING,
         allowedNull: false,
     },
 });
 
-module.exports = Users;
+module.exports = Chats;
