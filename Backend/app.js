@@ -34,11 +34,11 @@ Users.hasMany(Chats);
 Chats.belongsTo(Users);
 
 sequelize
-    .sync()
-    .then((response) => {
-        console.log(response);
-        app.listen(process.env.PORT || 3000, () =>
-            console.log("Server started running on Port: 3000")
-        );
-    })
-    .catch((err) => console.log(err));
+  .sync()
+  .then((response) => {
+    console.log(response);
+    app.listen(process.env.PORT || 3000, () =>
+      console.log("Server started running on Port: 3000")
+    );
+  })
+  .catch((err) => console.log(err));

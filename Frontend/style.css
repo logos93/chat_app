@@ -11,14 +11,14 @@
   box-shadow: 0 0 12px #2d3d49;
 }
 
-.login-view{
+.login-view {
   display: flex;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transition: display .5s ease-in-out;
+  transition: display 0.5s ease-in-out;
 }
 
 .register-view {
@@ -28,13 +28,14 @@
   width: 100%;
   height: 100%;
   display: none;
-  transition: display .5s ease-in-out;
+  transition: display 0.5s ease-in-out;
 }
 
 .app-header {
   padding: 6vh;
 }
-.app-header, .app-header > * {
+.app-header,
+.app-header > * {
   font-size: 4.8vh;
   margin: 0;
   font-weight: 300;
@@ -63,7 +64,7 @@
 .app-login > a {
   font-weight: 400;
   text-decoration: none;
-  color: #0F9EDE;
+  color: #0f9ede;
 }
 
 input {
@@ -83,44 +84,43 @@ input:focus {
   outline: none;
   box-shadow: inset 0 -0.5vh transparent;
 }
-input[type=text] {
+input[type="text"] {
   top: calc(42%);
 }
-input[type=number] {
+input[type="number"] {
   top: calc(50%);
 }
-input[type=email] {
+input[type="email"] {
   top: 58%;
 }
-input[type=password] {
+input[type="password"] {
   top: calc(58% + 7.5vh);
 }
 
-
-input[type=email]:valid ~ * .st1 {
+input[type="email"]:valid ~ * .st1 {
   transition-timing-function: ease-in-out;
   stroke-dasharray: 50, 153;
   stroke-dashoffset: 27;
 }
 
-input[type=password]:focus ~ * .st0,
-input[type=password]:valid ~ * .st0,
+input[type="password"]:focus ~ * .st0,
+input[type="password"]:valid ~ * .st0,
 .app-button:focus ~ * .st0 {
   stroke-dasharray: 210, 900;
   stroke-dashoffset: -305;
 }
 
-input[type=email]:focus ~ * .st0 {
+input[type="email"]:focus ~ * .st0 {
   stroke-dasharray: 210, 900;
   stroke-dashoffset: 0;
 }
 
-input[type=text]:focus ~ * .st2 {
+input[type="text"]:focus ~ * .st2 {
   stroke-dasharray: 210, 900;
   stroke-dashoffset: 0;
 }
 
-input[type=number]:focus ~ * .st3 {
+input[type="number"]:focus ~ * .st3 {
   stroke-dasharray: 210, 900;
   stroke-dashoffset: 0;
 }
@@ -132,7 +132,7 @@ input:not(:valid) ~ .app-button {
 
 .app-button {
   text-decoration: none;
-  color: #0F9EDE;
+  color: #0f9ede;
   font-size: 4.8vh;
   padding: 0 6vh;
   cursor: pointer;
@@ -143,43 +143,47 @@ input:not(:valid) ~ .app-button {
 .app-button:focus {
   outline: none;
 }
-.app-button:hover{
-  color: #9965AA;
+.app-button:hover {
+  color: #9965aa;
 }
 
 @-webkit-keyframes button-press {
-  from, 20% {
+  from,
+  20% {
     opacity: 1;
   }
   10% {
     opacity: 0.4;
   }
-  40%, to {
+  40%,
+  to {
     opacity: 0;
   }
 }
 
 @keyframes button-press {
-  from, 20% {
+  from,
+  20% {
     opacity: 1;
   }
   10% {
     opacity: 0.4;
   }
-  40%, to {
+  40%,
+  to {
     opacity: 0;
   }
 }
 #welcome:target ~ * .app-button {
   -webkit-animation: button-press 2s cubic-bezier(0.77, 0, 0.175, 1) both;
-          animation: button-press 2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  animation: button-press 2s cubic-bezier(0.77, 0, 0.175, 1) both;
 }
 #welcome:target ~ * .st0 {
   stroke-dashoffset: -760;
   stroke-dasharray: 140, 900;
   transition-duration: 1.2s;
   -webkit-animation: disappear 0s 1.3s both;
-          animation: disappear 0s 1.3s both;
+  animation: disappear 0s 1.3s both;
 }
 #welcome:target ~ * .st1 {
   transition-duration: 0.3s;
@@ -191,13 +195,14 @@ input:not(:valid) ~ .app-button {
 }
 #welcome:target ~ * #svg-lines {
   -webkit-animation: pulse 0.5833333333s 1.2s ease-in-out both;
-          animation: pulse 0.5833333333s 1.2s ease-in-out both;
+  animation: pulse 0.5833333333s 1.2s ease-in-out both;
   -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
+  animation-iteration-count: 3;
 }
 
 @-webkit-keyframes pulse {
-  from, to {
+  from,
+  to {
     transform: scale(1);
   }
   50% {
@@ -206,7 +211,8 @@ input:not(:valid) ~ .app-button {
 }
 
 @keyframes pulse {
-  from, to {
+  from,
+  to {
     transform: scale(1);
   }
   50% {
@@ -244,7 +250,11 @@ body {
   background: #1b212c;
 }
 
-.st0, .st2, .st1, .st3, .svg-loader-segment {
+.st0,
+.st2,
+.st1,
+.st3,
+.svg-loader-segment {
   fill: none;
   stroke: #42a3e4;
   stroke-width: 0.3vh;
@@ -263,12 +273,12 @@ body {
   stroke-dashoffset: 0;
 }
 
-.st3{
+.st3 {
   stroke-dasharray: 0, 900;
   stroke-dashoffset: 0;
 }
 
-.st2{
+.st2 {
   stroke-dasharray: 0, 900;
   stroke-dashoffset: 0;
 }
@@ -280,7 +290,9 @@ body {
 }
 
 .svg-loader-segment {
-  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.85s cubic-bezier(0.77, 0, 0.175, 1), stroke 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 0.85s cubic-bezier(0.77, 0, 0.175, 1),
+    stroke 0.85s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 #svg-lines {
@@ -318,7 +330,8 @@ body {
   stroke-width: 0.5vh;
 }
 
-html, body {
+html,
+body {
   font-size: 2.5vh;
   width: 100%;
   height: 100%;
@@ -358,7 +371,9 @@ html, body {
   display: none;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   position: relative;
 }
